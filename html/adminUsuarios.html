@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administracion de Empleados</title>
+    <link rel="stylesheet" href="../css/boostrap.css" />
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <link href="../css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-pro1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="padding: 0; margin-top: 12px; margin-right: 5px;">
+                    <img src="../img/logo.jpg" width="70">
+                </a>
+                <a class="navbar-brand" href="#">SML</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-pro1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="adminGeneral.html" title=""><i class="icon-cog"></i> Configuraci&oacute;n General</a>
+                    </li>
+                    <li class="active"><a href="adminUsuarios.html" title=""><i class="icon-user"></i> Administraci&oacute;n de Empleados</a>
+                    </li>
+                    <li><a href="adminUnidades.html" title=""><i class="icon-home"></i> Administraci&oacute;n de Unidades</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Nombre Usuario</a>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <img data-src="../img/anonymous.jpg/100x100" class="img-thumbnail" alt="" src="../img/anonymous.jpg">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="icon-sun"></i> Menu Principal</a>
+                            </li>
+                            <li><a href="#"><i class="icon-off"></i> Cerrar Sesi&oacute;n</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <!-- Nav tabs -->
+            <ul id="proTab" class="nav nav-tabs">
+                <li class="active"><a href="#empleados" data-toggle="tab">Empleados</a>
+                </li>
+                <li><a href="#tipoEmpleado" data-toggle="tab">Tipo de Empleado</a>
+                </li>
+                <li><a href="#diasInhabiles" data-toggle="tab">Dias Inhabiles</a>
+                </li>
+                <li><a href="#dispositivoMovil" data-toggle="tab">Asignaci&oacute;n de Dispositivo Movil</a>
+                </li>
+            </ul>
+            <div id="proTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="empleados">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Empleados</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="well well-sm text-right">
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#newEmpleado"><i class="icon-plus-sign"></i> Nuevo</button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Nombre</th>
+                                                    <th>Estatus</th>
+                                                    <th>Tel&eacute;fono Casa</th>
+                                                    <th>Tel&eacute;fono Oficina</th>
+                                                    <th>Tipo</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>378</td>
+                                                    <td>Carreto, Abraham</td>
+                                                    <td>A</td>
+                                                    <td>23781267</td>
+                                                    <td></td>
+                                                    <td>Lectorista</td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a data-toggle="modal" data-target="#mapa" title="Recorrido"><i class="icon-map-marker"></i> Recorrido</a></li>
+					                                            <li><a data-toggle="modal" data-target="#calendarEmpleado" title="Dias Inhabiles"><i class="icon-calendar"></i> Dias Inhabiles</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultEmpleado" title="Consultar"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editEmpleado" title="Editar"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a title="Eliminar"><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>393</td>
+                                                    <td>Lopez H., Alejandro</td>
+                                                    <td>A</td>
+                                                    <td>23781267</td>
+                                                    <td></td>
+                                                    <td>Lectorista</td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a data-toggle="modal" data-target="#mapa" title="Recorrido"><i class="icon-map-marker"></i> Recorrido</a></li>
+					                                            <li><a data-toggle="modal" data-target="#calendarEmpleado" title="Dias Inhabiles"><i class="icon-calendar"></i> Dias Inhabiles</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultEmpleado" title="Consultar"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editEmpleado" title="Editar"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a title="Eliminar"><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>523</td>
+                                                    <td>Hernández, Alex</td>
+                                                    <td>A</td>
+                                                    <td>23781267</td>
+                                                    <td></td>
+                                                    <td>Lectorista</td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a data-toggle="modal" data-target="#mapa" title="Recorrido"><i class="icon-map-marker"></i> Recorrido</a></li>
+					                                            <li><a data-toggle="modal" data-target="#calendarEmpleado" title="Dias Inhabiles"><i class="icon-calendar"></i> Dias Inhabiles</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultEmpleado" title="Consultar"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editEmpleado" title="Editar"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a title="Eliminar"><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>508</td>
+                                                    <td>Mejia Alexander</td>
+                                                    <td>A</td>
+                                                    <td>23781267</td>
+                                                    <td></td>
+                                                    <td>Lectorista</td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a data-toggle="modal" data-target="#mapa" title="Recorrido"><i class="icon-map-marker"></i> Recorrido</a></li>
+					                                            <li><a data-toggle="modal" data-target="#calendarEmpleado" title="Dias Inhabiles"><i class="icon-calendar"></i> Dias Inhabiles</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultEmpleado" title="Consultar"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editEmpleado" title="Editar"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a title="Eliminar"><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>388</td>
+                                                    <td>Perez, Andy</td>
+                                                    <td>A</td>
+                                                    <td>23781267</td>
+                                                    <td></td>
+                                                    <td>Lectorista</td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a data-toggle="modal" data-target="#mapa" title="Recorrido"><i class="icon-map-marker"></i> Recorrido</a></li>
+					                                            <li><a data-toggle="modal" data-target="#calendarEmpleado" title="Dias Inhabiles"><i class="icon-calendar"></i> Dias Inhabiles</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultEmpleado" title="Consultar"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editEmpleado" title="Editar"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a title="Eliminar"><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>510</td>
+                                                    <td>Chile, Arcenio</td>
+                                                    <td>A</td>
+                                                    <td>23781267</td>
+                                                    <td></td>
+                                                    <td>Lectorista</td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+					                                            <li><a data-toggle="modal" data-target="#mapa" title="Recorrido"><i class="icon-map-marker"></i> Recorrido</a></li>
+					                                            <li><a data-toggle="modal" data-target="#calendarEmpleado" title="Dias Inhabiles"><i class="icon-calendar"></i> Dias Inhabiles</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultEmpleado" title="Consultar"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editEmpleado" title="Editar"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a title="Eliminar"><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            	<tr>
+                                            		<td></td>
+                                            		<td><input type="text" class="form-control" placeholder="Buscar por Nombre"></td>
+                                            		<td></td>
+                                            		<td></td>
+                                            		<td></td>
+                                            		<td><input type="text" class="form-control" placeholder="Buscar por Tipo"></td>
+                                            		<td></td>
+                                            	</tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tipoEmpleado">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Tipos de Empleados</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="well well-sm text-right">
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#newTipoEmpleado"><i class="icon-plus-sign"></i> Nuevo</button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Descripci&oacute;n</th>
+                                                    <th>Abreviatura</th>
+                                                    <th>Tipo de OT</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Lectorista</td>
+                                                    <td>L</td>
+                                                    <td>OT Para Lecturas</td>
+                                                    <td><a data-toggle="modal" data-target="#editTipoEmpleado"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="diasInhabiles">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Dias Inh&aacute;biles</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="well well-sm">
+                                    	<form class="form-horizontal" role="form" method="post">
+                                    		<div class="form-group">
+                                    			<label for="mes" class="col-sm-1 control-label">Mes: </label>
+                                    			<div class="col-sm-2">
+	                                    			<select name="mes" id="mes" class="form-control">
+	                                    				<option value="4">abril</option>
+	                                    				<option value="5">mayo</option>
+	                                    			</select>
+	                                    		</div>
+                                    			<label for="anio" class="col-sm-1 control-label">A&ntilde;o: </label>
+                                    			<div class="col-sm-2">
+	                                    			<select name="anio" id="anio" class="form-control">
+	                                    				<option value="2014">2014</option>
+	                                    				<option value="2015">2015</option>
+	                                    			</select>
+	                                    		</div>
+	                                    		<div class="col-sm-2">
+	                                    			<button type="submit" class="btn btn-default">Filtrar</button>
+	                                    		</div>	
+	                                    		<div class="col-sm-4 text-right">
+	                                    			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#newDiaIn"><i class="icon-plus-sign"></i> Nuevo</button>
+	                                    		</div>
+                                    		</div>
+                                    	</form>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped">
+                                        	<caption class="text-center">2014 - Abril</caption>
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Descripci&oacute;n</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Domingo, 6</td>
+                                                    <td>D&iacute;a Domingo</td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Domingo, 13</td>
+                                                    <td>D&iacute;a Domingo</td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Domingo, 20</td>
+                                                    <td>D&iacute;a Domingo</td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Domingo, 27</td>
+                                                    <td>D&iacute;a Domingo</td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="dispositivoMovil">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Dispositivos M&oacute;viles</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Dispositivo</th>
+                                                    <th>Tipo</th>
+                                                    <th>Marca</th>
+                                                    <th>Modelo</th>
+                                                    <th>Serie</th>
+                                                    <th>Estatus</th>
+                                                    <th>C&oacute;digo</th>
+                                                    <th>Asignado a</th>
+                                                    <th>Estatus Empleado</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>78</td>
+                                                    <td>Impresora</td>
+                                                    <td>ONEIL</td>
+                                                    <td>MF4TE</td>
+                                                    <td>MP57297</td>
+                                                    <td>A</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoHistorial"><i class="icon-time"></i> Historial</a></td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoAsignacion"><i class="icon-user-md"></i> Asignacion</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>79</td>
+                                                    <td>Impresora</td>
+                                                    <td>ONEIL</td>
+                                                    <td>MF4TE</td>
+                                                    <td>MP57299</td>
+                                                    <td>A</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoHistorial"><i class="icon-time"></i> Historial</a></td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoAsignacion"><i class="icon-user-md"></i> Asignacion</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>82</td>
+                                                    <td>Impresora</td>
+                                                    <td>ONEIL</td>
+                                                    <td>MF4TE</td>
+                                                    <td>MP57305</td>
+                                                    <td>A</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoHistorial"><i class="icon-time"></i> Historial</a></td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoAsignacion"><i class="icon-user-md"></i> Asignacion</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>83</td>
+                                                    <td>Impresora</td>
+                                                    <td>ONEIL</td>
+                                                    <td>MF4TE</td>
+                                                    <td>MP57307</td>
+                                                    <td>A</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoHistorial"><i class="icon-time"></i> Historial</a></td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoAsignacion"><i class="icon-user-md"></i> Asignacion</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>85</td>
+                                                    <td>Impresora</td>
+                                                    <td>ONEIL</td>
+                                                    <td>MF4TE</td>
+                                                    <td>MP57309</td>
+                                                    <td>A</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoHistorial"><i class="icon-time"></i> Historial</a></td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoAsignacion"><i class="icon-user-md"></i> Asignacion</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>86</td>
+                                                    <td>Impresora</td>
+                                                    <td>ONEIL</td>
+                                                    <td>MF4TE</td>
+                                                    <td>MP57310</td>
+                                                    <td>A</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td>--</td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoHistorial"><i class="icon-time"></i> Historial</a></td>
+                                                    <td><a href="" data-toggle="modal" data-target="#dispositivoAsignacion"><i class="icon-user-md"></i> Asignacion</a></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td>
+                                                        <input type="text" class="form-control" placeholder="Buscar Dispositivo">
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /example -->
+        </div>
+    </section>
+    <!-- /contenido principal -->
+
+	<!--
+    <footer class="navbar navbar-inverse navbar-fixed-bottom">
+    	<div class="container text-center">
+    		<p class="navbar-text text-center">&copy; Company 2014</p>
+    	</div>
+    </footer>-->
+    <!-- /footer -->
+
+    <!-- /Modal Empleado -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newEmpleado">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso de Empleados</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="codigo" class="control-label col-sm-4">Codigo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigo" id="codigo" autocomplete="off" value="" placeholder="Codigo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoEmpleado" class="control-label col-sm-4">Tipo Empleado:</label>
+                                <div class="col-sm-8">
+                                    <select name="tipoEmpleado" id="tipoEmpleado" class="form-control">
+                                    	<option value="1">Lecturista</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre" class="control-label col-sm-4">Nombre:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos" class="control-label col-sm-4">Apellidos:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="clave" class="control-label col-sm-4">Clave:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="clave" id="clave" autocomplete="off" value="" placeholder="Clave" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confiClave" class="control-label col-sm-4">Confirmar Clave:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="confiClave" id="confiClave" autocomplete="off" value="" placeholder="Confirmar Clave" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-4">Direcci&oacute;n:</label>
+                                <div class="col-sm-8">
+                                    <textarea name="direccion" id="direccion" rows="2" placeholder="Direccion" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoSMS" class="control-label col-sm-4">Tel&eacute;fono SMS:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="telefonoSMS" id="telefonoSMS" autocomplete="off" value="" placeholder="Telefono SMS" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="operadorTelefonoSMS" class="control-label col-sm-4">Operador Tel&eacute;fono SMS:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="operadorTelefonoSMS" id="operadorTelefonoSMS" autocomplete="off" value="" placeholder="Operador Telefono SMS" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoCasa" class="control-label col-sm-4">Tel&eacute;fono Casa:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="telefonoCasa" id="telefonoCasa" autocomplete="off" value="" placeholder="Telefono Casa" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="control-label col-sm-4">Correo Electronico:</label>
+                                <div class="col-sm-8">
+                                    <input type="email" name="correo" id="correo" autocomplete="off" value="" placeholder="Correo Electronico" class="form-control">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editEmpleado">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="codigo" class="control-label col-sm-4">Codigo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigo" id="codigo" autocomplete="off" value="378" placeholder="Codigo" class="form-control" disabled="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoEmpleado" class="control-label col-sm-4">Tipo Empleado:</label>
+                                <div class="col-sm-8">
+                                    <select name="tipoEmpleado" id="tipoEmpleado" class="form-control">
+                                    	<option value="1">Lecturista</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre" class="control-label col-sm-4">Nombre:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" value="Abrham">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos" class="control-label col-sm-4">Apellidos:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" class="form-control" value="Carreto">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="clave" class="control-label col-sm-4">Clave:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="clave" id="clave" autocomplete="off" value="" placeholder="Clave" class="form-control">
+                                    <span class="help-block">Si desea cambiar el password ingrese uno nuevo aqui.</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confiClave" class="control-label col-sm-4">Confirmar Clave:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="confiClave" id="confiClave" autocomplete="off" value="" placeholder="Confirmar Clave" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-4">Direcci&oacute;n:</label>
+                                <div class="col-sm-8">
+                                    <textarea name="direccion" id="direccion" rows="2" placeholder="Direccion" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoSMS" class="control-label col-sm-4">Tel&eacute;fono SMS:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="telefonoSMS" id="telefonoSMS" autocomplete="off" value="" placeholder="Telefono SMS" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="operadorTelefonoSMS" class="control-label col-sm-4">Operador Tel&eacute;fono SMS:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="operadorTelefonoSMS" id="operadorTelefonoSMS" autocomplete="off" value="" placeholder="Operador Telefono SMS" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoCasa" class="control-label col-sm-4">Tel&eacute;fono Casa:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="telefonoCasa" id="telefonoCasa" autocomplete="off" value="" placeholder="Telefono Casa" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus" class="control-label col-sm-4">Estatus:</label>
+                                <div class="col-sm-8">
+                                    <select name="estatus" id="estatus" class="form-control">
+                                    	<option value="Baja">Baja</option>
+                                    	<option value="Alta">Alta</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="control-label col-sm-4">Correo Electronico:</label>
+                                <div class="col-sm-8">
+                                    <input type="email" name="correo" id="correo" autocomplete="off" value="" placeholder="Correo Electronico" class="form-control">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="consultEmpleado">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Consulta de Empleados</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="codigo" class="control-label col-sm-4">Codigo:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="codigo">378</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoEmpleado" class="control-label col-sm-4">Tipo Empleado:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="tipoEmpleado">Lectorista</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre" class="control-label col-sm-4">Nombre:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="nombre">Abraham</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos" class="control-label col-sm-4">Apellidos:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="apellidos">Carreto</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="clave" class="control-label col-sm-4">Clave:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="clave">********</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-4">Direcci&oacute;n:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="direccion"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoSMS" class="control-label col-sm-4">Tel&eacute;fono SMS:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="telefonoSMS"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="operadorTelefonoSMS" class="control-label col-sm-4">Operador Tel&eacute;fono SMS:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="operadorTelefonoSMS">ninguno</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefonoCasa" class="control-label col-sm-4">Tel&eacute;fono Casa:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="telefonoCasa"></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus" class="control-label col-sm-4">Estatus:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="estatus">A</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="control-label col-sm-4">Correo Electronico:</label>
+                                <div class="col-sm-8">
+                                    <p class="form-control-static" id="correo"></p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Tipo Empleado -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newTipoEmpleado">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso Tipos de Empleados</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                       	 	<div class="form-group">
+                                <label for="tipoOt">Tipo OT</label>
+                                <select name="tipoOt" id="tipoOt" class="form-control">
+                                	<option value="1">OT Para Lecturas</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="" placeholder="Abreviatura" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editTipoEmpleado">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="tipoOt">Tipo OT</label>
+                                <select name="tipoOt" id="tipoOt" class="form-control">
+                                	<option value="1">OT Para Lecturas</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="Lectorista" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="L" placeholder="Abreviatura" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Dias Inhabiles -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newDiaIn">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso Dias Inh&aacute;biles</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                        	<div class="form-group">
+                                <label for="fecha">Fecha</label>
+                                <input type="date" name="fecha" id="fecha" autocomplete="off" value="" placeholder="Fecha" class="form-control">
+                            </div>
+                       	 	<div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Dispositivos -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="dispositivoHistorial">
+    	<div class="modal-dialog modal-lg">
+    		<div class="modal-content">
+	    		<div class="modal-header">
+	    			<button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Dispositivo: 30002</h4>
+	    		</div>
+	    		<div class="modal-body">
+	    			<div class="table-responsive">
+	    				<table class="table table-condensed table-bordered table-striped">
+	    					<thead>
+	    						<tr>
+	    							<th>No.</th>
+	    							<th>Asignada a</th>
+	    							<th>Fecha de Asignacion</th>
+	    							<th>Observaciones</th>
+	    						</tr>
+	    					</thead>
+	    					<tbody>
+	    						<tr>
+	    							<td>1</td>
+	    							<td>EMPLEADO1</td>
+	    							<td>23/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>2</td>
+	    							<td>EMPLEADO2</td>
+	    							<td>24/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>3</td>
+	    							<td>EMPLEADO3</td>
+	    							<td>25/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>4</td>
+	    							<td>EMPLEADO4</td>
+	    							<td>26/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>5</td>
+	    							<td>EMPLEADO5</td>
+	    							<td>27/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>6</td>
+	    							<td>EMPLEADO6</td>
+	    							<td>28/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>7</td>
+	    							<td>EMPLEADO7</td>
+	    							<td>29/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>8</td>
+	    							<td>EMPLEADO8</td>
+	    							<td>30/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>9</td>
+	    							<td>EMPLEADO9</td>
+	    							<td>23/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    						<tr>
+	    							<td>10</td>
+	    							<td>EMPLEADO10</td>
+	    							<td>23/05/2013</td>
+	    							<td></td>
+	    						</tr>
+	    					</tbody>
+	    				</table>
+	    			</div>
+	    		</div>
+	    		<div class="modal-footer">
+	    			<a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+	    		</div>
+	    	</div>	
+    	</div>
+    </div>
+
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="dispositivoAsignacion">
+    	<div class="modal-dialog modal-lg">
+    		<div class="modal-content">
+	    		<div class="modal-header">
+	    			<button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Asignaci&oacute;n de dispositivo: 30002</h4>
+	    		</div>
+	    		<div class="modal-body">
+	    			<div class="well well-sm">
+		    			<form class="form-horizontal">
+		    				<div class="form-group">
+		    					<label for="encargado" class="control-label col-sm-2">Encargado</label>
+		    					<div class="col-sm-6"><p class="form-control-static">Che Ordo&ntilde;ez Luis Humberto</p></div>
+		    					<div class="col-sm-4 text-right">
+		    						<a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+		    						<a class="btn btn-primary">Guardar cambios</a>
+		    					</div>
+		    				</div>
+		    			</form>
+	    			</div>
+	    			<div class="table-responsive">
+	    				<table class="table table-condensed table-bordered table-striped">
+	    					<thead>
+	    						<tr>
+	    							<th>No.</th>
+	    							<th>Empleado</th>
+	    							<th>Asignar</th>
+	    						</tr>
+	    					</thead>
+	    					<tbody>
+	    						<tr>
+	    							<td>821</td>
+	    							<td>Arturo Gomez Ramirez</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-0">
+                                        		<input name="asignar" id="asignar-0" type="radio" value="0">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>387</td>
+	    							<td>Carlos Estuardo Perez</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-1">
+                                        		<input name="asignar" id="asignar-1" type="radio" value="1">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>415</td>
+	    							<td>Cristian Alfaro</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-2">
+                                        		<input name="asignar" id="asignar-2" type="radio" value="2">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>763</td>
+	    							<td>Francisco Por Yucute</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-3">
+                                        		<input name="asignar" id="asignar-3" type="radio" value="3">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>545</td>
+	    							<td>Francisco Ruiz Velasquez</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-4">
+                                        		<input name="asignar" id="asignar-4" type="radio" value="4">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>787</td>
+	    							<td>Hector Perez Tica</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-5">
+                                        		<input name="asignar" id="asignar-5" type="radio" value="5">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>817</td>
+	    							<td>Ignacio Merardo Morataya Vargas</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-6">
+                                        		<input name="asignar" id="asignar-6" type="radio" value="6">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>755</td>
+	    							<td>Jorge Mario Hernandez Mansilla</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-7">
+                                        		<input name="asignar" id="asignar-7" type="radio" value="7">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>823</td>
+	    							<td>Jorge Mijangos</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-8">
+                                        		<input name="asignar" id="asignar-8" type="radio" value="8">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    						<tr>
+	    							<td>821</td>
+	    							<td>Arturo Gomez Ramirez</td>
+	    							<td>
+	    								<div class="radio">
+                                    		<label for="asignar-9">
+                                        		<input name="asignar" id="asignar-9" type="radio" value="9">
+                                    		</label>
+                                		</div>
+                                	</td>
+	    						</tr>
+	    					</tbody>
+	    				</table>
+	    			</div>
+	    			<div class="well well-sm">
+	    				<form class="form-horizontal" role="form">
+	    					<div class="form-group">
+	    						<label for="observaciones" class="control-label col-sm-2">Observaciones:</label>
+	    						<div class="col-sm-10">
+	    							<textarea name="observaciones" id="observaciones" rows="2" placeholder="Observaciones" class="form-control"></textarea>
+	    						</div>
+	    					</div>
+	    				</form>
+	    			</div>
+	    		</div>
+	    		<div class="modal-footer">
+	    			<a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+	    		</div>
+	    	</div>	
+    	</div>
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

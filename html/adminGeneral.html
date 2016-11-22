@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administracion General</title>
+    <link rel="stylesheet" href="../css/boostrap.css" />
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/offcanvas.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <!--<div class="container">-->
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-pro1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="padding: 0; margin-top: 12px; margin-right: 5px;">
+                    <img src="../img/logo.jpg" width="70">
+                </a>
+                <a class="navbar-brand" href="#">SML</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-pro1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="adminGeneral.html" title=""><i class="icon-cog"></i> Configuraci&oacute;n General</a>
+                    </li>
+                    <li><a href="adminUsuarios.html" title=""><i class="icon-user"></i> Administraci&oacute;n de Empleados</a>
+                    </li>
+                    <li><a href="adminUnidades.html" title=""><i class="icon-home"></i> Administraci&oacute;n de Unidades</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Nombre Usuario</a>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <img data-src="../img/anonymous.jpg/100x100" class="img-thumbnail" alt="" src="../img/anonymous.jpg">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="icon-sun"></i> Menu Principal</a>
+                            </li>
+                            <li><a href="#"><i class="icon-off"></i> Cerrar Sesi&oacute;n</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        <!--</div>-->
+    </nav>
+    <section>
+        <div class="container-fluid">
+
+            <div class="row row-offcanvas row-offcanvas-right">
+
+                <div class="col-md-12 col-lg-9">
+                    <div class="row hidden-lg">
+                        <div class="col-lg-12 text-right">
+                            <button type="button" class="btn btn-primary" data-toggle="offcanvas" id="menuToggle"><i class="icon-reorder"></i> Toggle nav</button>
+                        </div>
+                    </div>        
+                    </p>
+                    <div id="proTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="tipoUsuario">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n tipo de Usuario</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newTipoUsuario"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Tipo</th>
+                                                            <th>Descripcion</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>ADMIN</td>
+                                                            <td>ADMINISTRADOR</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ADMIN_JORNADAS</td>
+                                                            <td>ADMINISTRADOR DE JORNADAS</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ADMIN_JORNADAS_PLUS</td>
+                                                            <td>ADMINISTRADOR DE JORNADAS + VER FACTURA</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>INC_ANALISIS</td>
+                                                            <td>ANALISIS DE INCIDENCIAS</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>LEC_RECLAMOS</td>
+                                                            <td>ANALISIS DE RECLAMOS</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>LEC_RUTEO</td>
+                                                            <td>RUTEO LECTURISTAS</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="usuarios">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n de Usuarios</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newUsuario"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Nombre</th>
+                                                            <th>Estatus</th>
+                                                            <th>Clave</th>
+                                                            <th>Tipo</th>
+                                                            <th>Tel&eacute;fono</th>
+                                                            <th>Correo Electronico</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Usuario Administrador</td>
+                                                            <td>A</td>
+                                                            <td>useradmin</td>
+                                                            <td>ADMIN</td>
+                                                            <td>2222-3434</td>
+                                                            <td>in@systemco.com</td>
+                                                            <td><a data-toggle="modal" data-target="#editUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Usuario Operador</td>
+                                                            <td>A</td>
+                                                            <td>useropera1</td>
+                                                            <td>LEC_RUTEO</td>
+                                                            <td>2222-3434</td>
+                                                            <td>in@systemco.com</td>
+                                                            <td><a data-toggle="modal" data-target="#editUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Usuario Operador</td>
+                                                            <td>A</td>
+                                                            <td>useropera3</td>
+                                                            <td>LEC_RUTEO</td>
+                                                            <td>2222-3434</td>
+                                                            <td>in@systemco.com</td>
+                                                            <td><a data-toggle="modal" data-target="#editUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Usuario Operador</td>
+                                                            <td>A</td>
+                                                            <td>useropera4</td>
+                                                            <td>LEC_RUTEO</td>
+                                                            <td>2222-3434</td>
+                                                            <td>in@systemco.com</td>
+                                                            <td><a data-toggle="modal" data-target="#editUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Usuario Operador</td>
+                                                            <td>A</td>
+                                                            <td>useropera5</td>
+                                                            <td>LEC_RUTEO</td>
+                                                            <td>2222-3434</td>
+                                                            <td>in@systemco.com</td>
+                                                            <td><a data-toggle="modal" data-target="#editUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Usuario Operador</td>
+                                                            <td>A</td>
+                                                            <td>useropera6</td>
+                                                            <td>LEC_RUTEO</td>
+                                                            <td>2222-3434</td>
+                                                            <td>in@systemco.com</td>
+                                                            <td><a data-toggle="modal" data-target="#editUsuario"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="acciones">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n de Acciones</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newAccion"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>No.</th>
+                                                            <th>Nombre</th>
+                                                            <th>Estatus</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Admin: Acceso a Configuracion General</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editAccion"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Admin: Acceso a Configuracion General</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editAccion"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Admin: Acceso a Adminstracion Empleados</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editAccion"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Admin: Acceso a Administracion de Unidades</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editAccion"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td>Admin: Listar Zonas</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editAccion"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td>Admin: Crear zonas</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editAccion"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tipoOt">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n de Ordenes de Trabajo</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newOT"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Descripcion</th>
+                                                            <th>Abreviatura</th>
+                                                            <th>Estatus</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>OT Para Activar un Medidor</td>
+                                                            <td>Activaciones</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editOT"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>OT Para Cortes</td>
+                                                            <td>Corte</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editOT"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>OT Para Instalar Medidores</td>
+                                                            <td>Install</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editOT"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>OT Para Lecutras</td>
+                                                            <td>Lecturas</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editOT"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>OT Para Reparaciones</td>
+                                                            <td>Reparacion</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editOT"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>OT Para Reparar e Intalar Medidores</td>
+                                                            <td>Repintall</td>
+                                                            <td>A</td>
+                                                            <td><a data-toggle="modal" data-target="#editOT"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" name="as" class="form-control" placeholder="Buscar Descripcion">
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <input type="text" name="ad" class="form-control" placeholder="Buscar Estatus">
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tipoIncidencia">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n tipos de Incidencias</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newTipoIncidencia"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Descripci&oacute;n</th>
+                                                            <th>Abreviatura</th>
+                                                            <th>Tipo de Unidad</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Caja Llena de agua</td>
+                                                            <td>CLLDA</td>
+                                                            <td>Medidor</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoIncidencia"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Drenaje Tapado</td>
+                                                            <td>DT</td>
+                                                            <td>Infraestructura</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoIncidencia"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Falta de agua sectorial</td>
+                                                            <td>FAS</td>
+                                                            <td>Infraestructura</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoIncidencia"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fuga de Medidor</td>
+                                                            <td>FDM</td>
+                                                            <td>Medidor</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoIncidencia"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fuga de agua en la calle</td>
+                                                            <td>FC</td>
+                                                            <td>Infraestructura</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoIncidencia"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fuga de agua individual</td>
+                                                            <td>FI</td>
+                                                            <td>Infraestructura</td>
+                                                            <td><a data-toggle="modal" data-target="#editTipoIncidencia"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td><input type="text" class="form-control" placeholder="Buscar por Descripcion" /></td>
+                                                            <td></td>
+                                                            <td><input type="text" class="form-control" placeholder="Buscar por tipo de Unidad" /></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="dispositivoMovil">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n Dispositivos Moviles</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newDispositivoMovil"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Dispositivo</th>
+                                                            <th>Tipo</th>
+                                                            <th>Marca</th>
+                                                            <th>Modelo</th>
+                                                            <th>Serie</th>
+                                                            <th>Estatus</th>
+                                                            <th>Empleado</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>30011</td>
+                                                            <td>Pcket PC</td>
+                                                            <td>Internec</td>
+                                                            <td>CN3</td>
+                                                            <td>24910846001</td>
+                                                            <td>A</td>
+                                                            <td>Empleado1</td>
+                                                            <td><a data-toggle="modal" data-target="#consultDispositivoMovil"><i class="icon-search"></i> Consultar</a></td>
+                                                            <td><a data-toggle="modal" data-target="#editDispositivoMovil"><i class="icon-edit"></i> Editar</a></td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>30012</td>
+                                                            <td>Pcket PC</td>
+                                                            <td>Internec</td>
+                                                            <td>CN3</td>
+                                                            <td>24910846002</td>
+                                                            <td>A</td>
+                                                            <td>Empleado2</td>
+                                                            <td><a data-toggle="modal" data-target="#consultDispositivoMovil"><i class="icon-search"></i> Consultar</a></td>
+                                                            <td><a data-toggle="modal" data-target="#editDispositivoMovil"><i class="icon-edit"></i> Editar</a></td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>30013</td>
+                                                            <td>Pcket PC</td>
+                                                            <td>Internec</td>
+                                                            <td>CN3</td>
+                                                            <td>24910846003</td>
+                                                            <td>A</td>
+                                                            <td>Empleado3</td>
+                                                            <td><a data-toggle="modal" data-target="#consultDispositivoMovil"><i class="icon-search"></i> Consultar</a></td>
+                                                            <td><a data-toggle="modal" data-target="#editDispositivoMovil"><i class="icon-edit"></i> Editar</a></td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>30014</td>
+                                                            <td>Pcket PC</td>
+                                                            <td>Internec</td>
+                                                            <td>CN3</td>
+                                                            <td>24910846004</td>
+                                                            <td>A</td>
+                                                            <td>Empleado1</td>
+                                                            <td><a data-toggle="modal" data-target="#consultDispositivoMovil"><i class="icon-search"></i> Consultar</a></td>
+                                                            <td><a data-toggle="modal" data-target="#editDispositivoMovil"><i class="icon-edit"></i> Editar</a></td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>30015</td>
+                                                            <td>Pcket PC</td>
+                                                            <td>Internec</td>
+                                                            <td>CN3</td>
+                                                            <td>24910846005</td>
+                                                            <td>A</td>
+                                                            <td>Empleado2</td>
+                                                            <td><a data-toggle="modal" data-target="#consultDispositivoMovil"><i class="icon-search"></i> Consultar</a></td>
+                                                            <td><a data-toggle="modal" data-target="#editDispositivoMovil"><i class="icon-edit"></i> Editar</a></td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>30016</td>
+                                                            <td>Pcket PC</td>
+                                                            <td>Internec</td>
+                                                            <td>CN3</td>
+                                                            <td>24910846006</td>
+                                                            <td>A</td>
+                                                            <td>Empleado3</td>
+                                                            <td><a data-toggle="modal" data-target="#consultDispositivoMovil"><i class="icon-search"></i> Consultar</a></td>
+                                                            <td><a data-toggle="modal" data-target="#editDispositivoMovil"><i class="icon-edit"></i> Editar</a></td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a></td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <td><input type="text" placeholder="Buscar por Dipositivo" class="form-control" /></td>
+                                                            <td><input type="text" placeholder="Buscar por Tipo" class="form-control" /></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><input type="text" placeholder="Buscar por Estatus" class="form-control" /></td>
+                                                            <td><input type="text" placeholder="Buscar por Empleado" class="form-control" /></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="estadosUnidades">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n Estados de Unidades</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newEstadoUnidad"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Estado</th>
+                                                            <th>Descripcion</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Normal</td>
+                                                            <td><a data-toggle="modal" data-target="#editEstadoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Servicio Cortado</td>
+                                                            <td><a data-toggle="modal" data-target="#editEstadoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Susp. Definitiva</td>
+                                                            <td><a data-toggle="modal" data-target="#editEstadoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td>Susp. Temporal</td>
+                                                            <td><a data-toggle="modal" data-target="#editEstadoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td>Susp. con gravamen</td>
+                                                            <td><a data-toggle="modal" data-target="#editEstadoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6</td>
+                                                            <td>Medidor levantado</td>
+                                                            <td><a data-toggle="modal" data-target="#editEstadoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="categoria">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n tipo de Usuario</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#newCategoria"><i class="icon-plus-sign"></i> Nuevo</button>
+                                            </div>
+                                            <div class="table-responsive">
+                                                <table class="table table-condensed table-bordered table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Descripcion</th>
+                                                            <th>Abreviatura</th>
+                                                            <th></th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>APARTAMENTO</td>
+                                                            <td>MENTO</td>
+                                                            <td><a data-toggle="modal" data-target="#editCategoria"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>ASENTAMIENTOS</td>
+                                                            <td>ENTOS</td>
+                                                            <td><a data-toggle="modal" data-target="#editCategoria"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BAÑOS</td>
+                                                            <td>BAÑOS</td>
+                                                            <td><a data-toggle="modal" data-target="#editCategoria"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BAR</td>
+                                                            <td>BAR</td>
+                                                            <td><a data-toggle="modal" data-target="#editCategoria"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BODEGA</td>
+                                                            <td>ODEGA</td>
+                                                            <td><a data-toggle="modal" data-target="#editCategoria"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>BOMBEROS</td>
+                                                            <td>BOMBEROS</td>
+                                                            <td><a data-toggle="modal" data-target="#editCategoria"><i class="icon-edit"></i> Editar</a>
+                                                            </td>
+                                                            <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="resolucionCC">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title">Administraci&oacute;n tipo de Usuario</div>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="well well-sm text-right">
+                                                <button class="btn btn-success" data-toggle="modal" data-target="#editResolucion"><i class="icon-edit"></i> Editar</button>
+                                            </div>
+                                            <form action="adminGeneral_submit" method="get" accept-charset="utf-8" class="form-horizontal" role="form">
+                                                <fieldset>
+                                                    <div class="form-group">
+                                                        <label for="forma" class="control-label col-sm-2">Forma de la factura:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="forma">26-B3-CCC</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="resolucion" class="control-label col-sm-2">Resoluci&oacute;n ISR:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="resolucion">** EXENTO DEL ISR, ARTICULO No. 8, DECRETO No. 10-2012</p>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <legend>Parte superior de la factura</legend>
+                                                    <div class="form-group">
+                                                        <label for="ParteUnoLineaUno" class="control-label col-sm-2">Primera L&iacute;nea:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="ParteUnoLineaUno">AUTORIZACION DE LA CONTRALORIA GENERAL DE CUENTAS, SEGÚN RESOLUCION Bk./006343 CLAS.: 7862-20000-A-17-2009 DE FECHA 10-8-2009. CORRELATIVO No. 01-2009</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ParteUnoLineaDos" class="control-label col-sm-2">Segunda L&iacute;nea:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="ParteUnoLineaDos">DE FECHA DE AUTORIZACION DE LA IMPRESION 28-9-2009. ENVIO MUNICIPAL CCC 25449 DE FECHA 28-9-2009. CUENTA E1-25 OFICIO NUMERO 399-2009 DE FECHA</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ParteUnoLineaTres" class="control-label col-sm-2">Tercera L&iacute;nea:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="ParteUnoLineaTres">19-8-2009. FACTURA 26-B3-CCC SIN SERIE CANTIDAD 2,000,000 DEL 01 AL 2,000,000 LIBRO AB FOLIO 194.</p>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <legend>Codo de la factura</legend>
+                                                    <div class="form-group">
+                                                        <label for="ParteDosLineaUno" class="control-label col-sm-2">Primera L&iacute;nea:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="ParteDosLineaUno">AUTORIZACION DE LA CONTRALORIA GENERAL DE CUENTAS, SEGÚN RESOLUCION Bk./006343 CLAS.: 7862-20000-A-17-2009</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ParteDosLineaDos" class="control-label col-sm-2">Segunda L&iacute;nea:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="ParteDosLineaDos">DE FECHA 10-8-2009. CORRELATIVO No. 01-2009 DE FECHA DE AUTORIZACION DE LA IMPRESION 28-9-2009. ENVIO</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ParteDosLineaTres" class="control-label col-sm-2">Tercera L&iacute;nea:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="ParteDosLineaTres">MUNICIPAL CCC 25449 DE FECHA 28-9-2009. CUENTA E1-25 OFICIO NUMERO 399-2009 DE FECHA 19-8-2009.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="ParteDosLineaCuatro" class="control-label col-sm-2">Cuarta L&iacute;nea:</label>
+                                                        <div class="col-sm-10">
+                                                            <p class="form-control-static" id="ParteDosLineaCuatro">FACTURA 26-B3-CCC SIN SERIE CANTIDAD 2,000,000 DEL 01 AL 2,000,000 LIBRO AB FOLIO 194.</p>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/span-->
+
+                <div class="col-md-6 col-lg-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                    <div class="list-group" id="group-principal">
+                        <a href="#tipoUsuario" data-toggle="tab" class="list-group-item active">Tipo de Usuario</a>
+                        <a href="#usuarios" data-toggle="tab" class="list-group-item">Usuarios</a>
+                        <a href="#acciones" data-toggle="tab" class="list-group-item">Acciones</a>
+                        <a href="#tipoOt" data-toggle="tab" class="list-group-item">Tipo de OT</a>
+                        <a href="#tipoIncidencia" data-toggle="tab" class="list-group-item">Tipo de Incidencia</a>
+                        <a href="#dispositivoMovil" data-toggle="tab" class="list-group-item">Dispositivo M&oacute;vil</a>
+                        <a href="#estadosUnidades" data-toggle="tab" class="list-group-item">Estados de Unidades</a>
+                        <a href="#categoria" data-toggle="tab" class="list-group-item">Categoria</a>
+                        <a href="#resolucionCC" data-toggle="tab" class="list-group-item">Resoluci&oacute;n CC</a>
+                    </div>
+                </div>
+                <!--/span-->
+            </div>
+            <!--/row-->
+        </div>
+        <!-- /example -->
+    </section>
+    <!-- /contenido principal -->
+    <!--
+    <footer class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container text-center">
+            <p class="navbar-text text-center">&copy; Company 2014</p>
+        </div>
+    </footer>-->
+    <!-- /footer -->
+    <!-- /Modal Tipo Usuario -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newTipoUsuario">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Nuevo Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="codigo">C&oacute;digo</label>
+                                <input type="text" name="codigo" id="codigo" autocomplete="off" value="" placeholder="Codigo" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editTipoUsuario">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="codigo">C&oacute;digo</label>
+                                <input type="text" name="codigo" id="codigo" autocomplete="off" value="ADMIN" placeholder="Codigo" class="form-control" disabled="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="ADMINISTRADOR" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus">Estatus</label>
+                                <select name="estatus" id="estatus" class="form-control">
+                                    <option value="alta">Alta</option>
+                                    <option value="baja">Baja</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Usuario -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newUsuario">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Nuevo Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="nombre" class="control-label col-sm-4">Nombre Completo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="nombre" id="nombre" autocomplete="off" value="" placeholder="Nombre Completo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="clave" class="control-label col-sm-4">Clave:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="clave" id="clave" autocomplete="off" value="" placeholder="Clave" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label col-sm-4">Password:</label>
+                                <div class="col-sm-8">
+                                    <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confiPassword" class="control-label col-sm-4">Confirmar Password:</label>
+                                <div class="col-sm-8">
+                                    <input type="password" name="confiPassword" id="confiPassword" placeholder="Confirmar Password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pregunta" class="control-label col-sm-4">Pregunta Secreta:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="pregunta" id="pregunta" autocomplete="off" value="" placeholder="Pregunta Secreta" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="respuesta" class="control-label col-sm-4">Respuesta Secreta:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="respuesta" id="respuesta" autocomplete="off" value="" placeholder="Respuesta Secreta" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo" class="control-label col-sm-4">Tipo Usuario:</label>
+                                <div class="col-sm-8">
+                                    <select name="tipo" id="tipo" class="form-control">
+                                        <option value="alta">ADMINISTRADOR</option>
+                                        <option value="baja">ADMINISTRADOR DE JORNADAS</option>
+                                        <option value="baja">ADMINISTRADOR DE JORNADAS + VER FACTURAS</option>
+                                        <option value="baja">ANALISIS DE INCIDENCIAS</option>
+                                        <option value="baja">ANALISIS DE RECLAMOS</option>
+                                        <option value="baja">RUTEO LECTURISTAS</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="control-label col-sm-4">Correo Electronico:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="correo" id="correo" autocomplete="off" value="" placeholder="Correo Electronico" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="control-label col-sm-4">Tel&eacute;fono:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="telefono" id="telefono" autocomplete="off" value="" placeholder="Telefono" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-4">Direcci&oacute;n:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="direccion" id="direccion" autocomplete="off" value="" placeholder="Direccion" class="form-control">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editUsuario">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="nombre" class="control-label col-sm-4">Nombre Completo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="nombre" id="nombre" autocomplete="off" value="" placeholder="Nombre Completo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="clave" class="control-label col-sm-4">Clave:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="clave" id="clave" autocomplete="off" value="" placeholder="Clave" class="form-control">
+                                </div>
+                            </div>
+                            <div class="alert alert-warning text-center">Para cambiar password ingrese el nuevo abajo.</div>
+                            <div class="form-group">
+                                <label for="password" class="control-label col-sm-4">Password:</label>
+                                <div class="col-sm-8">
+                                    <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confiPassword" class="control-label col-sm-4">Confirmar Password:</label>
+                                <div class="col-sm-8">
+                                    <input type="password" name="confiPassword" id="confiPassword" placeholder="Confirmar Password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="alert alert-warning text-center">Para cambiar de respuesta secreta ingrese la nueva respuesta abajo.</div>
+                            <div class="form-group">
+                                <label for="pregunta" class="control-label col-sm-4">Pregunta Secreta:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="pregunta" id="pregunta" autocomplete="off" value="" placeholder="Pregunta Secreta" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="respuesta" class="control-label col-sm-4">Respuesta Secreta:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="respuesta" id="respuesta" autocomplete="off" value="" placeholder="Respuesta Secreta" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo" class="control-label col-sm-4">Tipo Usuario:</label>
+                                <div class="col-sm-8">
+                                    <select name="tipo" id="tipo" class="form-control">
+                                        <option value="alta">ADMINISTRADOR</option>
+                                        <option value="baja">ADMINISTRADOR DE JORNADAS</option>
+                                        <option value="baja">ADMINISTRADOR DE JORNADAS + VER FACTURAS</option>
+                                        <option value="baja">ANALISIS DE INCIDENCIAS</option>
+                                        <option value="baja">ANALISIS DE RECLAMOS</option>
+                                        <option value="baja">RUTEO LECTURISTAS</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" class="control-label col-sm-4">Correo Electronico:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="correo" id="correo" autocomplete="off" value="" placeholder="Correo Electronico" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono" class="control-label col-sm-4">Tel&eacute;fono:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="telefono" id="telefono" autocomplete="off" value="" placeholder="Telefono" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-4">Direcci&oacute;n:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="direccion" id="direccion" autocomplete="off" value="" placeholder="Direccion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="value" class="control-label col-sm-4">Estatus:</label>
+                                <div class="col-sm-8">
+                                    <select name="estatus" id="value" class="form-control">
+                                        <option value="alta">ALTA</option>
+                                        <option value="baja">BAJA</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Acciones -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newAccion">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Nuevo Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editAccion">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Acci&oacute;</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="Admin: Acceso a configuraciones generales" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus">Estatus</label>
+                                <select name="estatus" id="estatus" class="form-control">
+                                    <option value="alta">Alta</option>
+                                    <option value="baja">Baja</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Ordenes de Trabajo -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newOT">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Nuevo Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="" placeholder="Abreviatura" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editOT">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Orden de Trabajo</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="OT Para Reparar e Instalar Medidores" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="Repinstall" placeholder="Abreviatura" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus">Estatus</label>
+                                <select name="estatus" id="estatus" class="form-control">
+                                    <option value="alta">Alta</option>
+                                    <option value="baja">Baja</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Tipo de Incidencia -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newTipoIncidencia">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso de Tipos de Incidencias</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="" placeholder="Abreviatura" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad">Abreviatura</label>
+                                <select name="tipoUnidad" id="tipoUnidad" class="form-control">
+                                    <option value="Medidor">Medidor</option>
+                                    <option value="Macromedidor">Macromedidor</option>
+                                    <option value="Infraestructura">Infraestructura</option>
+                                    <option value="MedidoresNoLista">Medidores No Lista de Lectura</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editTipoIncidencia">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Edición de Tipos de Incidencias</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control" value="Caja LLena de agua">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="" placeholder="Abreviatura" class="form-control" value="CLLDA">
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad">Abreviatura</label>
+                                <select name="tipoUnidad" id="tipoUnidad" class="form-control">
+                                    <option value="Medidor">Medidor</option>
+                                    <option value="Macromedidor">Macromedidor</option>
+                                    <option value="Infraestructura">Infraestructura</option>
+                                    <option value="MedidoresNoLista">Medidores No Lista de Lectura</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Dispositivo Movil -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newDispositivoMovil">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso de Dispositivos Moviles</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="dispositivo" class="control-label col-sm-4">Dispositivo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="dispositivo" id="dispositivo" autocomplete="off" value="" placeholder="Dispositivo" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad" class="control-label col-sm-4">Tipo de Unidad:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="tipoUnidad" id="tipoUnidad" autocomplete="off" value="" placeholder="Tipo de Unidad" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="marca" class="control-label col-sm-4">Marca:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="marca" id="marca" autocomplete="off" value="" placeholder="Marca" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="modelo" class="control-label col-sm-4">Modelo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="modelo" id="modelo" autocomplete="off" value="" placeholder="Modelo" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="serie" class="control-label col-sm-4">Serie:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="serie" id="serie" autocomplete="off" value="" placeholder="Serie" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion" class="control-label col-sm-4">Descripcion:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Accesorios" class="control-label col-sm-4">Accesorios:</label>
+                                <div class="col-sm-8">
+                                    <textarea name="accesorios" id="accesorios" cols="8" rows="2" placeholder="Accesorios" class="form-control input-sm"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="empleado" class="control-label col-sm-4">Asignar a Empleado:</label>
+                                <div class="col-sm-8">
+                                    <select name="empleado" id="empleado" class="form-control input-sm">
+                                        <option value="1">Empleado1</option>
+                                        <option value="2">Empleado2</option>
+                                        <option value="3">Empleado3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigoIMEI" class="control-label col-sm-4">C&oacute;digo IMEI:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigoIMEI" id="codigoIMEI" autocomplete="off" value="" placeholder="Codigo IMEI" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigoChip" class="control-label col-sm-4">C&oacute;digo Chip:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigoChip" id="codigoChip" autocomplete="off" value="" placeholder="Codigo Chip" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="macAddress" class="control-label col-sm-4">MAC Address:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="macAddress" id="macAddress" autocomplete="off" value="" placeholder="MAC Address" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="numTelefono" class="control-label col-sm-4">N&uacute;mero de Tel&eacute;fono:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="numTelefono" id="numTelefono" autocomplete="off" value="" placeholder="Numero de Telefono" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="operadorMovil" class="control-label col-sm-4">Operador M&oacute;vil:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="operadorMovil" id="operadorMovil" autocomplete="off" value="" placeholder="Operador Movil" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="identificacion" class="control-label col-sm-4">Identificaci&oacute;n:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="identificacion" id="identificacion" autocomplete="off" value="" placeholder="Identificacion" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editDispositivoMovil">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Edición de Dispositivos Moviles</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="dispositivo" class="control-label col-sm-4">Dispositivo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="dispositivo" id="dispositivo" autocomplete="off" value="3001" placeholder="Dispositivo" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad" class="control-label col-sm-4">Tipo de Unidad:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="tipoUnidad" id="tipoUnidad" autocomplete="off" value="Pocket PC" placeholder="Tipo de Unidad" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="marca" class="control-label col-sm-4">Marca:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="marca" id="marca" autocomplete="off" value="Itermec" placeholder="Marca" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="modelo" class="control-label col-sm-4">Modelo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="modelo" id="modelo" autocomplete="off" value="CN3" placeholder="Modelo" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="serie" class="control-label col-sm-4">Serie:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="serie" id="serie" autocomplete="off" value="25727362782" placeholder="Serie" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion" class="control-label col-sm-4">Descripcion:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="POCKET PC" placeholder="Descripcion" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Accesorios" class="control-label col-sm-4">Accesorios:</label>
+                                <div class="col-sm-8">
+                                    <textarea name="accesorios" id="accesorios" cols="8" rows="2" placeholder="Accesorios" class="form-control input-sm">1</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="empleado" class="control-label col-sm-4">Asignar a Empleado:</label>
+                                <div class="col-sm-8">
+                                    <select name="empleado" id="empleado" class="form-control input-sm">
+                                        <option value="1">Empleado1</option>
+                                        <option value="2">Empleado2</option>
+                                        <option value="3" selected="true">Empleado3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigoIMEI" class="control-label col-sm-4">C&oacute;digo IMEI:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigoIMEI" id="codigoIMEI" autocomplete="off" value="" placeholder="Codigo IMEI" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigoChip" class="control-label col-sm-4">C&oacute;digo Chip:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigoChip" id="codigoChip" autocomplete="off" value="" placeholder="Codigo Chip" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="macAddress" class="control-label col-sm-4">MAC Address:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="macAddress" id="macAddress" autocomplete="off" value="" placeholder="MAC Address" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="numTelefono" class="control-label col-sm-4">N&uacute;mero de Tel&eacute;fono:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="numTelefono" id="numTelefono" autocomplete="off" value="" placeholder="Numero de Telefono" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="operadorMovil" class="control-label col-sm-4">Operador M&oacute;vil:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="operadorMovil" id="operadorMovil" autocomplete="off" value="ninguno" placeholder="Operador Movil" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus" class="control-label col-sm-4">Estatus:</label>
+                                <div class="col-sm-8">
+                                    <select name="estatus" id="estatus" class="form-control">
+                                        <option value="alta">Alta</option>
+                                        <option value="baja">Baja</option>
+                                    </select>
+                                </div>    
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="consultDispositivoMovil">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Consulta de Dispositivos Moviles</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="dispositivo" class="control-label col-sm-4">Dispositivo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="dispositivo" id="dispositivo" readonly="true" disabled="true" value="3001" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad" class="control-label col-sm-4">Tipo de Unidad:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="tipoUnidad" id="tipoUnidad" readonly="true" disabled="true" value="Pocket PC" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="marca" class="control-label col-sm-4">Marca:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="marca" id="marca" readonly="true" disabled="true" value="Itermec" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="modelo" class="control-label col-sm-4">Modelo:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="modelo" id="modelo" readonly="true" disabled="true" value="CN3" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="serie" class="control-label col-sm-4">Serie:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="serie" id="serie" readonly="true" disabled="true" value="25727362782" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion" class="control-label col-sm-4">Descripcion:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="descripcion" id="descripcion" readonly="true" disabled="true" value="POCKET PC" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="Accesorios" class="control-label col-sm-4">Accesorios:</label>
+                                <div class="col-sm-8">
+                                    <textarea name="accesorios" id="accesorios" cols="8" rows="2" readonly="true" disabled="true" class="form-control input-sm">1</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="empleado" class="control-label col-sm-4">Asignar a Empleado:</label>
+                                <div class="col-sm-8">
+                                    <select name="empleado" id="empleado" class="form-control input-sm" readonly="true" disabled="true" >
+                                        <option value="1">Empleado1</option>
+                                        <option value="2">Empleado2</option>
+                                        <option value="3" selected="true">Empleado3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigoIMEI" class="control-label col-sm-4">C&oacute;digo IMEI:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigoIMEI" id="codigoIMEI" value="" readonly="true" disabled="true" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigoChip" class="control-label col-sm-4">C&oacute;digo Chip:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="codigoChip" id="codigoChip" value="" readonly="true" disabled="true" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="macAddress" class="control-label col-sm-4">MAC Address:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="macAddress" id="macAddress" value="" readonly="true" disabled="true" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="numTelefono" class="control-label col-sm-4">N&uacute;mero de Tel&eacute;fono:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="numTelefono" id="numTelefono" alue="" readonly="true" disabled="true" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="operadorMovil" class="control-label col-sm-4">Operador M&oacute;vil:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" name="operadorMovil" id="operadorMovil" value="ninguno" readonly="true" disabled="true" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Tipo Estados -->    
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newEstadoUnidad">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso de Estados de Unidad</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <input type="text" name="estado" id="estado" autocomplete="off" value="" placeholder="Estado" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editEstadoUnidad">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <input type="text" name="estado" id="estado" autocomplete="off" value="1" placeholder="Estado" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="Normal" placeholder="Descripcion" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Categoria -->   
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newCategoria">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso de Categorias</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="" placeholder="Abreviatura" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editCategoria">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="APARTAMENTO" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="MENTO" placeholder="Abreviatura" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Resolucion CC -->   
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editResolucion">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="adminGeneral_submit" method="get" accept-charset="utf-8" class="form-horizontal" role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="forma" class="control-label col-sm-2">Forma de la factura:</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control input-sm" id="forma" name="forma" value="26-B3-CCC" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="resolucion" class="control-label col-sm-2">Resoluci&oacute;n ISR:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="resolucion" id="resolucion" rows="2" class="form-control input-sm" >** EXENTO DEL ISR, ARTICULO No. 8, DECRETO No. 10-2012</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Parte superior de la factura</legend>
+                            <div class="form-group">
+                                <label for="ParteUnoLineaUno" class="control-label col-sm-2">Primera L&iacute;nea:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="ParteUnoLineaUno" id="ParteUnoLineaUno" rows="2" class="form-control input-sm" >AUTORIZACION DE LA CONTRALORIA GENERAL DE CUENTAS, SEGÚN RESOLUCION Bk./006343 CLAS.: 7862-20000-A-17-2009 DE FECHA 10-8-2009. CORRELATIVO No. 01-2009</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ParteUnoLineaDos" class="control-label col-sm-2">Segunda L&iacute;nea:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="ParteUnoLineaDos" id="ParteUnoLineaDos" rows="2" class="form-control input-sm" >DE FECHA DE AUTORIZACION DE LA IMPRESION 28-9-2009. ENVIO MUNICIPAL CCC 25449 DE FECHA 28-9-2009. CUENTA E1-25 OFICIO NUMERO 399-2009 </textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ParteUnoLineaTres" class="control-label col-sm-2">Tercera L&iacute;nea:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="ParteUnoLineaTres" id="ParteUnoLineaTres" rows="2" class="form-control input-sm" >19-8-2009. FACTURA 26-B3-CCC SIN SERIE CANTIDAD 2,000,000 DEL 01 AL 2,000,000 LIBRO AB FOLIO 194.</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Codo de la factura</legend>
+                            <div class="form-group">
+                                <label for="ParteDosLineaUno" class="control-label col-sm-2">Primera L&iacute;nea:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="ParteDosLineaUno" id="ParteDosLineaUno" rows="2" class="form-control input-sm" >AUTORIZACION DE LA CONTRALORIA GENERAL DE CUENTAS, SEGÚN RESOLUCION Bk./006343 CLAS.: 7862-20000-A-17-2009</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ParteDosLineaDos" class="control-label col-sm-2">Segunda L&iacute;nea:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="ParteDosLineaDos" id="ParteDosLineaDos" rows="2" class="form-control input-sm" >DE FECHA 10-8-2009. CORRELATIVO No. 01-2009 DE FECHA DE AUTORIZACION DE LA IMPRESION 28-9-2009. ENVIO</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ParteDosLineaTres" class="control-label col-sm-2">Tercera L&iacute;nea:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="ParteDosLineaTres" id="ParteDosLineaTres" rows="2" class="form-control input-sm" >MUNICIPAL CCC 25449 DE FECHA 28-9-2009. CUENTA E1-25 OFICIO NUMERO 399-2009 DE FECHA 19-8-2009.</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="ParteDosLineaCuatro" class="control-label col-sm-2">Cuarta L&iacute;nea:</label>
+                                <div class="col-sm-10">
+                                    <textarea name="ParteDosLineaCuatro" id="ParteDosLineaCuatro" rows="2" class="form-control input-sm" >FACTURA 26-B3-CCC SIN SERIE CANTIDAD 2,000,000 DEL 01 AL 2,000,000 LIBRO AB FOLIO 194.</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/offcanvas.js"></script>
+</body>
+
+</html>

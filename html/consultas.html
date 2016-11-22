@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="../css/boostrap.css" />
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <link href="../css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-pro1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="padding: 0; margin-top: 12px; margin-right: 5px;">
+                    <img src="../img/logo.jpg" width="70">
+                </a>
+                <a class="navbar-brand" href="#">SML</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-pro1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignaciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Asignacion de bloques</a>
+                            </li>
+                            <li><a href="#">Disponibilidad de Personal</a>
+                            </li>
+                            <li><a href="#">Bloques Asignados para Lectura</a>
+                            </li>
+                            <li><a href="#">Consulta de Asignaciones</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Jornadas <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Abrir siguiente Jornada</a>
+                            </li>
+                            <li><a href="#">Cerrar jornada</a>
+                            </li>
+                            <li><a href="#">Avance jornada</a>
+                            </li>
+                            <li><a href="#">Carga de bloque a PlanLect</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Ordenes de trabajo <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Generar ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Anular ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Administracion de ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Emulador de Facturacion</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active"><a href="consultas.html"><i class="icon-search"></i> Consultas</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Nombre Usuario</a>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <img data-src="../img/anonymous.jpg/100x100" class="img-thumbnail" alt="" src="../img/anonymous.jpg">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="icon-sun"></i> Menu Principal</a>
+                            </li>
+                            <li><a href="#"><i class="icon-off"></i> Cerrar Sesi&oacute;n</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="well well-sm">
+                <div class="row">
+                    <form>
+                        <label for="ciclo" class="control-label col-lg-1">Ciclo:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="04/2014" id="ciclo" name="ciclo" disabled="true" class="form-control">
+                        </div>
+                        <label for="jornada" class="control-label col-lg-1">Jornada:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="17" id="jornada" name="jornada" disabled="true" class="form-control">
+                        </div>
+                        <label for="fecha" class="control-label col-lg-1">Fecha:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="21/04/2014" id="fecha" name="fecha" disabled="true" class="form-control">
+                        </div>
+                        <label for="estatus" class="control-label col-lg-1">Estatus:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="Distribuida" id="estatus" name="estatus" disabled="true" class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Trasacciones</div>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <div class="list-group">
+                                <h4 class="list-group-item-heading">Consultas</h4>
+                                <a href="#" class="list-group-item">Consulta Incidencias</a>
+                                <a href="#" class="list-group-item">Consulta de Lecturas</a>
+                                <a href="#" class="list-group-item">Listado de fotografias de lecturas e incidencias</a>
+                                <a href="#" class="list-group-item">Analisis de fotografias</a>
+                                <a href="#" class="list-group-item">Analisis de lecturas</a>
+                                <a href="#" class="list-group-item">Consulta de resoluciones de la SAT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- /contenido principal -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

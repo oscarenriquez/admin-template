@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Disponibilidad de Personal</title>
+    <link rel="stylesheet" href="../css/boostrap.css" />
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/tableScroll.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-pro1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="padding: 0; margin-top: 12px; margin-right: 5px;">
+                    <img src="../img/logo.jpg" width="70">
+                </a>
+                <a class="navbar-brand" href="#">SML</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-pro1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignaciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asignacionBloques.html">Asignacion de bloques</a>
+                            </li>
+                            <li class="active"><a href="personalDisponible.html">Disponibilidad de Personal</a>
+                            </li>
+                            <li><a href="bloquesParaLectura.html">Bloques Asignados para Lectura</a>
+                            </li>
+                            <li><a href="consultaAsignaciones.html">Consulta de Asignaciones</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Jornadas <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Abrir siguiente Jornada</a>
+                            </li>
+                            <li><a href="#">Cerrar jornada</a>
+                            </li>
+                            <li><a href="#">Avance jornada</a>
+                            </li>
+                            <li><a href="#">Carga de bloque a PlanLect</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Ordenes de trabajo <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Generar ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Anular ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Administracion de ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Emulador de Facturacion</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="consultas.html"><i class="icon-search"></i> Consultas</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Nombre Usuario</a>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <img data-src="../img/anonymous.jpg/100x100" class="img-thumbnail" alt="" src="../img/anonymous.jpg">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="icon-sun"></i> Menu Principal</a>
+                            </li>
+                            <li><a href="#"><i class="icon-off"></i> Cerrar Sesi&oacute;n</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="well well-sm">
+                        <div class="row">
+                            <form>
+                                <label for="ciclo" class="control-label col-lg-1">Ciclo:</label>
+                                <div class="col-lg-2">
+                                    <input type="text" value="04/2014" id="ciclo" name="ciclo" disabled="true" class="form-control">
+                                </div>
+                                <label for="jornada" class="control-label col-lg-1">Jornada:</label>
+                                <div class="col-lg-2">
+                                    <input type="text" value="17" id="jornada" name="jornada" disabled="true" class="form-control">
+                                </div>
+                                <label for="fecha" class="control-label col-lg-1">Fecha:</label>
+                                <div class="col-lg-2">
+                                    <input type="text" value="21/04/2014" id="fecha" name="fecha" disabled="true" class="form-control">
+                                </div>
+                                <label for="estatus" class="control-label col-lg-1">Estatus:</label>
+                                <div class="col-lg-2">
+                                    <input type="text" value="Distribuida" id="estatus" name="estatus" disabled="true" class="form-control">
+                                </div>
+                            </form>
+                        </div>    
+                    </div>
+                </div>
+             </div>       
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="panel-title">Filtro</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="nombre" class="control-label col-sm-2">Nombre:</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"/>
+                                        </div>    
+                                        <label for="ppc" class="control-label col-sm-2">PPC:</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control col-sm-3" id="ppc" name="ppc" placeholder="PPC"/>
+                                        </div>    
+                                        <div class="col-sm-2">
+                                            <button type="button" class="btn btn-info"><i class="icon-search"></i> Filtrar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                Disponibilidad de Personal
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive div-scroll">
+                                <table class="table table-condensed table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Empleado</th>
+                                            <th>Nombre</th>
+                                            <th>PPC Asignada</th>
+                                            <th>Disponibilidad</th>
+                                            <th>Observaciones</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2361</td>
+                                            <td>Willian Arroyo</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2361</td>
+                                            <td>Carlos Cifuentes</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>2361</td>
+                                            <td>David Zamora</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>2361</td>
+                                            <td>Henry Maldonado</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>2361</td>
+                                            <td>Josue Morales</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success text-center"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>2361</td>
+                                            <td>Guatavo Flores</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success text-center"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>2361</td>
+                                            <td>Pablo Arriaga</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success text-center"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2361</td>
+                                            <td>Carlos Cifuentes</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>2361</td>
+                                            <td>David Zamora</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>2361</td>
+                                            <td>Henry Maldonado</td>
+                                            <td>343546</td>
+                                            <td><a class="text-success"><i class="icon-check"></i></a></td>
+                                            <td></td>
+                                            <td><a href=""><i class="icon-folder-close-alt"></i></a></td>
+                                            <td><a href=""><i class="icon-user-md"></i></a></td>
+                                            <td><a href=""><i class="icon-print"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <div class="panel-title">Resumen</div>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class="list-group-item">Empleados<span class="badge">98</span></li>
+                                <li class="list-group-item">Empleados diponibles<span class="badge">79</span></li>
+                                <li class="list-group-item">Empleados no disponibles<span class="badge">21</span></li>
+                                <li class="list-group-item">PPC asignadas<span class="badge">98</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /contenido principal -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

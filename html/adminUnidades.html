@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administracion de Unidades</title>
+    <link rel="stylesheet" href="../css/boostrap.css" />
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <link href="../css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-pro1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="padding: 0; margin-top: 12px; margin-right: 5px;">
+                    <img src="../img/logo.jpg" width="70">
+                </a>
+                <a class="navbar-brand" href="#">SML</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-pro1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="adminGeneral.html" title=""><i class="icon-cog"></i> Configuraci&oacute;n General</a>
+                    </li>
+                    <li><a href="adminUsuarios.html" title=""><i class="icon-user"></i> Administraci&oacute;n de Empleados</a>
+                    </li>
+                    <li class="active"><a href="adminUnidades.html" title=""><i class="icon-home"></i> Administraci&oacute;n de Unidades</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Nombre Usuario</a>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <img data-src="../img/anonymous.jpg/100x100" class="img-thumbnail" alt="" src="../img/anonymous.jpg">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="icon-sun"></i> Menu Principal</a>
+                            </li>
+                            <li><a href="#"><i class="icon-off"></i> Cerrar Sesi&oacute;n</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <!-- Nav tabs -->
+            <ul id="proTab" class="nav nav-tabs">
+                <li class="active"><a href="#unidad" data-toggle="tab">Unidad</a>
+                </li>
+                <li><a href="#tipoUnidad" data-toggle="tab">Tipo de Unidad</a>
+                </li>
+                <li><a href="#zona" data-toggle="tab">Zona</a>
+                </li>
+                <li><a href="#bloques" data-toggle="tab">Bloques</a>
+                </li>
+            </ul>
+            <div id="proTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="unidad">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Unidades</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="well well-sm">
+                                    	<form class="form-horizontal" role="form" method="post">
+                                    		<div class="form-group">
+                                    			<label for="mes" class="col-sm-1 control-label">Zona:</label>
+                                    			<div class="col-sm-2">
+	                                    			<select name="mes" id="mes" class="form-control">
+	                                    				<option value="4">A</option>
+	                                    				<option value="5">B</option>
+	                                    				<option value="6">C</option>
+	                                    				<option value="7">D</option>
+	                                    			</select>
+	                                    		</div>
+                                    			<label for="anio" class="col-sm-1 control-label">Bloque:</label>
+                                    			<div class="col-sm-2">
+	                                    			<select name="anio" id="anio" class="form-control">
+	                                    				<option value="1">1</option>
+	                                    				<option value="2">2</option>
+	                                    				<option value="3">3</option>
+	                                    				<option value="4">4</option>
+	                                    				<option value="5">5</option>
+	                                    			</select>
+	                                    		</div>
+	                                    		<div class="col-sm-2">
+	                                    			<button type="submit" class="btn btn-default">Filtrar</button>
+	                                    		</div>	
+	                                    		<div class="col-sm-4 text-right">
+	                                    			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#newUnidad"><i class="icon-plus-sign"></i> Nuevo</button>
+	                                    		</div>
+                                    		</div>
+                                    	</form>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped table-sm">
+                                        	<caption>Zona "A" - Bloque 1</caption>
+                                            <thead>
+                                                <tr>
+                                                    <th>Unidad</th>
+                                                    <th>Secuencia</th>
+                                                    <th>Categoria</th>
+                                                    <th>Direccion</th>
+                                                    <th>Razon Social</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>489232</td>
+                                                    <td>1</td>
+                                                    <td>Domicilio</td>
+                                                    <td>Calle 6 Casa 26 Manzana 6A</td>
+                                                    <td></td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a><i class="icon-tag"></i> Ver posicionamiento</a></li>
+					                                            <li><a><i class="icon-foursquare"></i> Ver incidencias</a></li>
+					                                            <li><a><i class="icon-eye-open"></i> Ver lecturas</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultUnidad"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editUnidad"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3452232</td>
+                                                    <td>2</td>
+                                                    <td>Comercio</td>
+                                                    <td>Calle 2 Casa 23 Manzana D</td>
+                                                    <td></td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a><i class="icon-tag"></i> Ver posicionamiento</a></li>
+					                                            <li><a><i class="icon-foursquare"></i> Ver incidencias</a></li>
+					                                            <li><a><i class="icon-eye-open"></i> Ver lecturas</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultUnidad"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editUnidad"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>239232</td>
+                                                    <td>3</td>
+                                                    <td>Domicilio</td>
+                                                    <td>Calle 2 Casa 3 Manzana A</td>
+                                                    <td></td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a><i class="icon-tag"></i> Ver posicionamiento</a></li>
+					                                            <li><a><i class="icon-foursquare"></i> Ver incidencias</a></li>
+					                                            <li><a><i class="icon-eye-open"></i> Ver lecturas</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultUnidad"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editUnidad"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7818992</td>
+                                                    <td>4</td>
+                                                    <td>Comercio</td>
+                                                    <td>Calle 11 Casa 26 Manzana 6</td>
+                                                    <td></td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a><i class="icon-tag"></i> Ver posicionamiento</a></li>
+					                                            <li><a><i class="icon-foursquare"></i> Ver incidencias</a></li>
+					                                            <li><a><i class="icon-eye-open"></i> Ver lecturas</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultUnidad"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editUnidad"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>119232</td>
+                                                    <td>5</td>
+                                                    <td>Domicilio</td>
+                                                    <td>Calle 16 Casa 6 Manzana B</td>
+                                                    <td></td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a><i class="icon-tag"></i> Ver posicionamiento</a></li>
+					                                            <li><a><i class="icon-foursquare"></i> Ver incidencias</a></li>
+					                                            <li><a><i class="icon-eye-open"></i> Ver lecturas</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultUnidad"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editUnidad"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3342332</td>
+                                                    <td>6</td>
+                                                    <td>Domicilio</td>
+                                                    <td>Calle 2 Casa 2 Manzana A</td>
+                                                    <td></td>
+                                                    <td>
+                                                    	<div class="btn-group">
+					                                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					                                            <i class="icon-cog"></i> Opciones
+					                                        </button>
+					                                        <ul class="dropdown-menu dropdown-menu-right" role="menu" >
+					                                            <li><a><i class="icon-tag"></i> Ver posicionamiento</a></li>
+					                                            <li><a><i class="icon-foursquare"></i> Ver incidencias</a></li>
+					                                            <li><a><i class="icon-eye-open"></i> Ver lecturas</a></li>
+					                                            <li><a data-toggle="modal" data-target="#consultUnidad"><i class="icon-search"></i> Consultar</a></li>
+					                                            <li><a data-toggle="modal" data-target="#editUnidad"><i class="icon-edit"></i> Editar</a></li>
+					                                            <li><a><i class="icon-trash"></i> Eliminar</a></li>
+					                                        </ul>
+					                                    </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            	<tr>
+                                            		<td><input type="text" class="form-control" placeholder="Buscar Unidad"></td>
+                                            		<td></td>
+                                            		<td><input type="text" class="form-control" placeholder="Buscar Categoria"></td>
+                                            		<td></td>
+                                            		<td><input type="text" class="form-control" placeholder="Buscar Razon Social"></td>
+                                            		<td></td>
+                                            	</tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tipoUnidad">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Usuarios</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="well well-sm text-right">
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#newTipoUnidad"><i class="icon-plus-sign"></i> Nuevo</button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Abreviatura</th>
+                                                    <th>Descripcion</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>MD</td>
+                                                    <td>Medidor</td>
+                                                    <td><a data-toggle="modal" data-target="#editTipoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MC</td>
+                                                    <td>Macromedidor</td>
+                                                    <td><a data-toggle="modal" data-target="#editTipoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>IF</td>
+                                                    <td>Infraestructura</td>
+                                                    <td><a data-toggle="modal" data-target="#editTipoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>MNL</td>
+                                                    <td>Medidores no Lista de de Lectura</td>
+                                                    <td><a data-toggle="modal" data-target="#editTipoUnidad"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="zona">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Acciones</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="well well-sm text-right">
+                                        <button class="btn btn-success" data-toggle="modal" data-target="#newZona"><i class="icon-plus-sign"></i> Nuevo</button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Grupo</th>
+                                                    <th>Nombre</th>
+                                                    <th>Abreviatura</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>A</td>
+                                                    <td>Zona A</td>
+                                                    <td>Zona A</td>
+                                                    <td><a data-toggle="modal" data-target="#editZona"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>B</td>
+                                                    <td>Zona B</td>
+                                                    <td>Zona B</td>
+                                                    <td><a data-toggle="modal" data-target="#editZona"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>C</td>
+                                                    <td>Zona C</td>
+                                                    <td>Zona C</td>
+                                                    <td><a data-toggle="modal" data-target="#editZona"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>D</td>
+                                                    <td>Zona D</td>
+                                                    <td>Zona D</td>
+                                                    <td><a data-toggle="modal" data-target="#editZona"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E</td>
+                                                    <td>Zona E</td>
+                                                    <td>Zona E</td>
+                                                    <td><a data-toggle="modal" data-target="#editZona"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>F</td>
+                                                    <td>Zona F</td>
+                                                    <td>Zona F</td>
+                                                    <td><a data-toggle="modal" data-target="#editZona"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="bloques">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">Administraci&oacute;n de Ordenes de Trabajo</div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="well well-sm">
+                                    	<form class="form-horizontal" role="form" method="post">
+                                    		<div class="form-group">
+                                    			<label for="mes" class="col-sm-1 control-label">Zona:</label>
+                                    			<div class="col-sm-2">
+	                                    			<select name="mes" id="mes" class="form-control">
+	                                    				<option value="4">Zona A</option>
+	                                    				<option value="5">Zona B</option>
+	                                    				<option value="6">Zona C</option>
+	                                    				<option value="7">Zona D</option>
+	                                    			</select>
+	                                    		</div>
+	                                    		<div class="checkbox col-sm-2">
+	                                    			<label>Area Especiales
+	                                    				<input type="checkbox" class="checkbox" value="1">
+	                                    			</label>
+	                                    		</div>
+                                    			<div class="col-sm-2">
+	                                    			<button type="submit" class="btn btn-default">Filtrar</button>
+	                                    		</div>	
+	                                    		<div class="col-sm-4 text-right">
+	                                    			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#newBloque"><i class="icon-plus-sign"></i> Nuevo</button>
+	                                    		</div>
+                                    		</div>
+                                    	</form>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-bordered table-striped">
+                                        	<caption>Zona A</caption>
+                                            <thead>
+                                                <tr>
+                                                    <th>Bloque</th>
+                                                    <th>Abreviatura</th>
+                                                    <th>Nombre</th>
+                                                    <th>Jornada</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Bloque 1</td>
+                                                    <td>Bloque 1</td>
+                                                    <td>1</td>
+                                                    <td><a data-toggle="modal" data-target="#editBloque"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Bloque 2</td>
+                                                    <td>Bloque 2</td>
+                                                    <td>1</td>
+                                                    <td><a data-toggle="modal" data-target="#editBloque"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Bloque 3</td>
+                                                    <td>Bloque 3</td>
+                                                    <td>1</td>
+                                                    <td><a data-toggle="modal" data-target="#editBloque"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Bloque 4</td>
+                                                    <td>Bloque 4</td>
+                                                    <td>1</td>
+                                                    <td><a data-toggle="modal" data-target="#editBloque"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Bloque 5</td>
+                                                    <td>Bloque 5</td>
+                                                    <td>1</td>
+                                                    <td><a data-toggle="modal" data-target="#editBloque"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Bloque 6</td>
+                                                    <td>Bloque 6</td>
+                                                    <td>1</td>
+                                                    <td><a data-toggle="modal" data-target="#editBloque"><i class="icon-edit"></i> Editar</a>
+                                                    </td>
+                                                    <td><a href=""><i class="icon-trash"></i> Eliminar</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                	<td></td>
+                                                	<td></td>
+                                                    <td>
+                                                        <input type="text" name="as" class="form-control" placeholder="Buscar Nombre">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="ad" class="form-control" placeholder="Buscar Jornada">
+                                                    </td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /example -->
+    </section>
+    <!-- /contenido principal -->
+
+    <!-- /Modal Unidad -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newUnidad">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingreso de Unidades</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="unidad" class="control-label col-sm-2 input-sm">Unidad:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="unidad" id="unidad" autocomplete="off" value="" placeholder="Unidad" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad" class="control-label col-sm-2 input-sm">Tipo Unidad:</label>
+                                <div class="col-sm-10">
+                                	<select name="tipoUnidad" id="tipoUnidad" class="form-control input-sm">
+                                		<option value="1">Infraestructura</option>
+                                		<option value="2">Comercio</option>
+                                		<option value="3">Domicilio</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="zona" class="control-label col-sm-2 input-sm">Zona:</label>
+                                <div class="col-sm-10">
+                                	<select name="zona" id="zona" class="form-control input-sm">
+                                		<option value="1">Seleccionar...</option>
+                                		<option value="2">Comercio</option>
+                                		<option value="3">Domicilio</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bloque" class="control-label col-sm-2 input-sm">Bloque:</label>
+                                <div class="col-sm-10">
+                                	<select name="bloque" id="bloque" class="form-control input-sm">
+                                		<option value="1">Seleccionar...</option>
+                                		<option value="2">Comercio</option>
+                                		<option value="3">Domicilio</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="categoria" class="control-label col-sm-2 input-sm">Categoria:</label>
+                                <div class="col-sm-10">
+                                	<select name="categoria" id="categoria" class="form-control input-sm">
+                                		<option value="1">APARTAMENTO</option>
+                                		<option value="2">COMERCIO</option>
+                                		<option value="3">DOMICILIO</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="secuencia" class="control-label col-sm-2 input-sm">Secuencia:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="secuencia" id="secuencia" autocomplete="off" value="" placeholder="Secuencia" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="razonSocial" class="control-label col-sm-2 input-sm">Macromedidor:</label>
+                                <div class="col-sm-10">
+                                	<label for="radios-si" class="radio-inline">
+	                                    <input name="macromedidor" id="radios-si" type="radio" value="1">Si
+	                                </label>
+	                                <label for="radios-no" class="radio-inline">
+	                                    <input name="macromedidor" id="radios-no" type="radio" value="2">No
+	                                </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus" class="control-label col-sm-2 input-sm">Estatus Unidad:</label>
+                                <div class="col-sm-10">
+                                	<select name="estatus" id="estatus" class="form-control input-sm">
+                                		<option value="1">CAMBIO DE MEDIDOR EN TRAMITE</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-2 input-sm">Direcci&oacute;n:</label>
+                                <div class="col-sm-10">
+                                	<textarea name="direccion" id="direccion" rows="2" class="form-control input-sm" placeholder="Direccion"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inmueble" class="control-label col-sm-2 input-sm">Inmueble:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="inmueble" id="inmueble" autocomplete="off" value="" placeholder="Inmueble" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="abonado" class="control-label col-sm-2 input-sm">Abonado:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="abonado" id="abonado" autocomplete="off" value="" placeholder="Abonado" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="razonSocial" class="control-label col-sm-2 input-sm">Raz&oacute;n Social:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="razonSocial" id="razonSocial" autocomplete="off" value="" placeholder="Razon Social" class="form-control input-sm">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editUnidad">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="unidad" class="control-label col-sm-2 input-sm">Unidad:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="unidad" id="unidad" autocomplete="off" value="7892312" placeholder="Unidad" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad" class="control-label col-sm-2 input-sm">Tipo Unidad:</label>
+                                <div class="col-sm-10">
+                                	<select name="tipoUnidad" id="tipoUnidad" class="form-control input-sm">
+                                		<option value="1">Infraestructura</option>
+                                		<option value="2" selected="true">Medidor</option>
+                                		<option value="3">Domicilio</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="zona" class="control-label col-sm-2 input-sm">Zona:</label>
+                                <div class="col-sm-10">
+                                	<select name="zona" id="zona" class="form-control input-sm">
+                                		<option value="1">Seleccionar...</option>
+                                		<option value="2" selected="true">Zona A</option>
+                                		<option value="3">Zona B</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bloque" class="control-label col-sm-2 input-sm">Bloque:</label>
+                                <div class="col-sm-10">
+                                	<select name="bloque" id="bloque" class="form-control input-sm">
+                                		<option value="1">Seleccionar...</option>
+                                		<option value="2" selected="true">Bloque 1</option>
+                                		<option value="3">Bloque 2</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="categoria" class="control-label col-sm-2 input-sm">Categoria:</label>
+                                <div class="col-sm-10">
+                                	<select name="categoria" id="categoria" class="form-control input-sm">
+                                		<option value="1">APARTAMENTO</option>
+                                		<option value="2" selected="true">COMERCIO</option>
+                                		<option value="3">DOMICILIO</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="secuencia" class="control-label col-sm-2 input-sm">Secuencia:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="secuencia" id="secuencia" autocomplete="off" value="11" placeholder="Secuencia" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="razonSocial" class="control-label col-sm-2 input-sm">Macromedidor:</label>
+                                <div class="col-sm-10">
+                                	<label for="radios-si" class="radio-inline">
+	                                    <input name="macromedidor" id="radios-si" type="radio" value="1">Si
+	                                </label>
+	                                <label for="radios-no" class="radio-inline">
+	                                    <input name="macromedidor" id="radios-no" checked="true" type="radio" value="2">No
+	                                </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus" class="control-label col-sm-2 input-sm">Estatus Unidad:</label>
+                                <div class="col-sm-10">
+                                	<select name="estatus" id="estatus" class="form-control input-sm">
+                                		<option value="1">CAMBIO DE MEDIDOR EN TRAMITE</option>
+                                		<option value="2" selected="true">SIN ESTADO</option>
+                                	</select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-2 input-sm">Direcci&oacute;n:</label>
+                                <div class="col-sm-10">
+                                	<textarea name="direccion" id="direccion" rows="2" class="form-control input-sm" placeholder="Direccion">Calle 2 casa 13 Manzan 12
+                                	</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inmueble" class="control-label col-sm-2 input-sm">Inmueble:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="inmueble" id="inmueble" autocomplete="off" value="343434" placeholder="Inmueble" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="abonado" class="control-label col-sm-2 input-sm">Abonado:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="abonado" id="abonado" autocomplete="off" value="IBAÑEZ LEMUS JOSUE DAVID" placeholder="Abonado" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="razonSocial" class="control-label col-sm-2 input-sm">Raz&oacute;n Social:</label>
+                                <div class="col-sm-10">
+                                	<input type="text" name="razonSocial" id="razonSocial" autocomplete="off" value="" placeholder="Razon Social" class="form-control input-sm">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estado" class="control-label col-sm-2 input-sm">Estado:</label>
+                                <div class="col-sm-10">
+                                	<select name="estado" id="estado" class="form-control input-sm">
+                                		<option value="1">A</option>
+                                		<option value="2">B</option>
+                                	</select>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="consultUnidad">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Editar Tipo de Usuario</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="unidad" class="control-label col-sm-2 input-sm">Unidad:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">7892312</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipoUnidad" class="control-label col-sm-2 input-sm">Tipo Unidad:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">Medidor</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="zona" class="control-label col-sm-2 input-sm">Zona:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">Zona A</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="bloque" class="control-label col-sm-2 input-sm">Bloque:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">Bloque 1</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="categoria" class="control-label col-sm-2 input-sm">Categoria:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">COMERCIO</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="secuencia" class="control-label col-sm-2 input-sm">Secuencia:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">11</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="razonSocial" class="control-label col-sm-2 input-sm">Macromedidor:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">No</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estatus" class="control-label col-sm-2 input-sm">Estatus Unidad:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">SIN ESTADO</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion" class="control-label col-sm-2 input-sm">Direcci&oacute;n:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">Calle 2 casa 13 Manzan 12</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inmueble" class="control-label col-sm-2 input-sm">Inmueble:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">343434</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="abonado" class="control-label col-sm-2 input-sm">Abonado:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">IBAÑEZ LEMUS JOSUE DAVID</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="razonSocial" class="control-label col-sm-2 input-sm">Raz&oacute;n Social:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">A</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="estado" class="control-label col-sm-2 input-sm">Estado:</label>
+                                <div class="col-sm-10">
+                                	<p class="form-control-static">A</p>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-danger" data-dismiss="modal">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<!-- /Modal Tipo Unidad -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newTipoUnidad">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingresos de Tipo de Unidad</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="" placeholder="Abreviatura" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editTipoUnidad">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Edici&oacute;n Tipos de Unidad</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="Medidor" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="MD" placeholder="Abreviatura" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Zona -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newZona">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingresos de Zonas</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="zona">Zona</label>
+                                <input type="text" name="zona" id="zona" autocomplete="off" value="" placeholder="Zona" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="" placeholder="Abreviatura" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="grupo">Grupo</label>
+                                <input type="text" name="grupo" id="grupo" autocomplete="off" value="" placeholder="Grupo" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editZona">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Edici&oacute;n de Zonas</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="zona">Zona</label>
+                                <input type="text" name="zona" id="zona" autocomplete="off" value="A" placeholder="Zona" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="descripcion" autocomplete="off" value="Zona A" placeholder="Descripcion" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura">Abreviatura</label>
+                                <input type="text" name="abreviatura" id="abreviatura" autocomplete="off" value="Zona A" placeholder="Abreviatura" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="grupo">Grupo</label>
+                                <input type="text" name="grupo" id="grupo" autocomplete="off" value="1" placeholder="Grupo" class="form-control">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /Modal Bloque -->
+    <div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="newBloque">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Ingresos de Bloques</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="zona" class="control-label col-sm-4">Zona:</label>
+                                <div class="col-sm-8">
+                                	<select name="zona" id="zona" class="form-control">
+                                		<option value="1" selected="true">Zona A</option>
+                                		<option value="2">Zona B</option>
+                                		<option value="3">Zona C</option>
+                                	</select>
+                                </div>	
+                            </div>
+                            <div class="form-group">
+                                <label for="bloque" class="control-label col-sm-4">Bloque:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre" class="control-label col-sm-4">Nombre:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura" class="control-label col-sm-4">Abreviatura:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="jornada" class="control-label col-sm-4">Jornada Lectura:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="especial" class="control-label col-sm-4">Area Especial:</label>
+                                <div class="col-sm-8">
+                                	<label class="radio-inline" for="si">
+                                		<input type="radio" name="especial" id="si" value="si" />Si
+                                	</label>
+                                	<label class="radio-inline" for="no">
+                                		<input type="radio" name="especial" id="no" value="no" />No
+                                	</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" aria-hidden="true" data-keyboard="false" id="editBloque">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Edici&oacute;n Tipos de Unidad</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="admin_submit" method="post" accept-charset="ut-8" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="zona" class="control-label col-sm-4">Zona:</label>
+                                <div class="col-sm-8">
+                                	<select name="zona" id="zona" class="form-control">
+                                		<option value="1" selected="true">Zona A</option>
+                                		<option value="2">Zona B</option>
+                                		<option value="3">Zona C</option>
+                                	</select>
+                                </div>	
+                            </div>
+                            <div class="form-group">
+                                <label for="bloque" class="control-label col-sm-4">Bloque:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="1" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre" class="control-label col-sm-4">Nombre:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="Bloque 1" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="abreviatura" class="control-label col-sm-4">Abreviatura:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="Bloque 1" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="jornada" class="control-label col-sm-4">Jornada Lectura:</label>
+                                <div class="col-sm-8">
+                                	<input type="text" name="descripcion" id="descripcion" autocomplete="off" value="1" placeholder="Descripcion" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="especial" class="control-label col-sm-4">Area Especial:</label>
+                                <div class="col-sm-8">
+                                	<label class="radio-inline" for="si">
+                                		<input type="radio" name="especial" id="si" value="si" />Si
+                                	</label>
+                                	<label class="radio-inline" for="no">
+                                		<input type="radio" name="especial" id="no" value="no" checked="true" />No
+                                	</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-default" data-dismiss="modal">Cerrar</a>
+                    <a class="btn btn-primary">Guardar cambios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consulta de Asignaciones</title>
+    <link rel="stylesheet" href="../css/boostrap.css" />
+    <style>
+        body {
+            padding-top: 70px;
+        }
+        a {
+            cursor: pointer;
+        }
+    </style>
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/tableScroll.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-pro1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="padding: 0; margin-top: 12px; margin-right: 5px;">
+                    <img src="../img/logo.jpg" width="70">
+                </a>
+                <a class="navbar-brand" href="#">SML</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-pro1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Asignaciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asignacionBloques.html">Asignacion de bloques</a>
+                            </li>
+                            <li><a href="personalDisponible.html">Disponibilidad de Personal</a>
+                            </li>
+                            <li><a href="bloquesParaLectura.html">Bloques Asignados para Lectura</a>
+                            </li>
+                            <li class="active"><a href="consultaAsignaciones.html">Consulta de Asignaciones</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Jornadas <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Abrir siguiente Jornada</a>
+                            </li>
+                            <li><a href="#">Cerrar jornada</a>
+                            </li>
+                            <li><a href="#">Avance jornada</a>
+                            </li>
+                            <li><a href="#">Carga de bloque a PlanLect</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Ordenes de trabajo <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Generar ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Anular ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Administracion de ordenes de trabajo</a>
+                            </li>
+                            <li><a href="#">Emulador de Facturacion</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="consultas.html"><i class="icon-search"></i> Consultas</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Opciones <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Nombre Usuario</a>
+                            </li>
+                            <li>
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <img data-src="../img/anonymous.jpg/100x100" class="img-thumbnail" alt="" src="../img/anonymous.jpg">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="icon-sun"></i> Menu Principal</a>
+                            </li>
+                            <li><a href="#"><i class="icon-off"></i> Cerrar Sesi&oacute;n</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="well well-sm">
+                <div class="row">
+                    <form>
+                        <label for="ciclo" class="control-label col-lg-1">Ciclo:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="04/2014" id="ciclo" name="ciclo" disabled="true" class="form-control">
+                        </div>
+                        <label for="jornada" class="control-label col-lg-1">Jornada:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="17" id="jornada" name="jornada" disabled="true" class="form-control">
+                        </div>
+                        <label for="fecha" class="control-label col-lg-1">Fecha:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="21/04/2014" id="fecha" name="fecha" disabled="true" class="form-control">
+                        </div>
+                        <label for="estatus" class="control-label col-lg-1">Estatus:</label>
+                        <div class="col-lg-2">
+                            <input type="text" value="Distribuida" id="estatus" name="estatus" disabled="true" class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Bloques Pendientes
+                            </div>
+                            <div class="text-right col-lg-8">
+                                <button type="button" class="btn btn-success btn-sm" title="Ejecutar Proceso de Auto-Asignacion"><i class="icon-star"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm" title="Eliminar Plan de Trabajo"><i class="icon-move"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive div-scroll">
+                        <table class="table table-condensed table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Jornada</th>
+                                    <th>Zona</th>
+                                    <th>Bloque</th>
+                                    <th>Nombre</th>
+                                    <th>Pendientes</th>
+                                    <th>Totales</th>
+                                    <th>% Pendientes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>53</td>
+                                    <td>A</td>
+                                    <td>16</td>
+                                    <td>Byron Aguilar</td>
+                                    <td>34</td>
+                                    <td>120</td>
+                                    <td>39</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                Asignaciones
+                            </div>
+                            <div class="text-right col-lg-8">
+                                <button type="button" class="btn btn-danger btn-sm" title="Ver Lecturistas no Disponibles"><i class="icon-user"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul id="proTab" class="nav nav-tabs">
+                        <li class="active"><a href="#lectoristaAsignados" data-toggle="tab">Lectoristas Asignados</a></li>
+                        <li><a href="#lectoristaNoAsignados" data-toggle="tab">Lectoristas No Asignados</a></li>
+                    </ul>
+                    <div id="proTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="lectoristaAsignados" >
+                            <div class="table-responsive div-scroll">
+                                <table class="table table-condensed table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignar</th>
+                                            <th>#</th>
+                                            <th>NO.</th>
+                                            <th>Nombre</th>
+                                            <th>Dispositivo</th>
+                                            <th>Correlativos Disponibles</th>
+                                            <th>Antiguedad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>1</td>
+                                            <td>56</td>
+                                            <td>Carlos Gomez</td>
+                                            <td>3898</td>
+                                            <td>98923</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>2</td>
+                                            <td>51</td>
+                                            <td>Agusto Ramirez</td>
+                                            <td>3899</td>
+                                            <td>98924</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="lectoristaNoAsignados">
+                            <div class="table-responsive div-scroll">
+                                <table class="table table-condensed table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Asignar</th>
+                                            <th>#</th>
+                                            <th>Empleado</th>
+                                            <th>Nombre</th>
+                                            <th>% Asginaci&oacute;n</th>
+                                            <th>Antiguedad</th>
+                                            <th>Jornada</th>
+                                            <th>Zona</th>
+                                            <th>Bloque</th>
+                                            <th>Total de Medidores</th>
+                                            <th>Eliminar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>1</td>
+                                            <td>12</td>
+                                            <td>Luis Estrada</td>
+                                            <td>100</td>
+                                            <td></td>
+                                            <td>12</td>
+                                            <td>B</td>
+                                            <td>2</td>
+                                            <td>78</td>
+                                            <td><a><i class="icon-trash"></i> Eliminar</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>2</td>
+                                            <td>13</td>
+                                            <td>Carlos Ramirez</td>
+                                            <td>98</td>
+                                            <td></td>
+                                            <td>13</td>
+                                            <td>B</td>
+                                            <td>3</td>
+                                            <td>79</td>
+                                            <td><a><i class="icon-trash"></i> Eliminar</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>3</td>
+                                            <td>14</td>
+                                            <td>Wendy Alarcon</td>
+                                            <td>101</td>
+                                            <td></td>
+                                            <td>12</td>
+                                            <td>B</td>
+                                            <td>2</td>
+                                            <td>79</td>
+                                            <td><a><i class="icon-trash"></i> Eliminar</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>4</td>
+                                            <td>15</td>
+                                            <td>Jose Orantes</td>
+                                            <td>89</td>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>B</td>
+                                            <td>5</td>
+                                            <td>88</td>
+                                            <td><a><i class="icon-trash"></i> Eliminar</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>5</td>
+                                            <td>16</td>
+                                            <td>Bryan Montenegro</td>
+                                            <td>90</td>
+                                            <td></td>
+                                            <td>17</td>
+                                            <td>C</td>
+                                            <td>6</td>
+                                            <td>89</td>
+                                            <td><a><i class="icon-trash"></i> Eliminar</a></td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>4</td>
+                                            <td>15</td>
+                                            <td>Jose Orantes</td>
+                                            <td>89</td>
+                                            <td></td>
+                                            <td>15</td>
+                                            <td>B</td>
+                                            <td>5</td>
+                                            <td>88</td>
+                                            <td><a><i class="icon-trash"></i> Eliminar</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="radio">
+                                                    <label for="asignar-0">
+                                                        <input type="radio" name="asignar" id="asignar-0" />
+                                                    </label>    
+                                                </div>
+                                            </td>
+                                            <td>2</td>
+                                            <td>13</td>
+                                            <td>Carlos Ramirez</td>
+                                            <td>98</td>
+                                            <td></td>
+                                            <td>13</td>
+                                            <td>B</td>
+                                            <td>3</td>
+                                            <td>79</td>
+                                            <td><a><i class="icon-trash"></i> Eliminar</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /contenido principal -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+
+</html>
